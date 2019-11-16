@@ -41,6 +41,7 @@ namespace MyFirstAPI.Controllers
         [HttpGet("{id}")]
         public ActionResult<string> Get(int id)
         {
+            
             var person = _people.FirstOrDefault(p => p.Id == id);
             if (person == null) return NotFound();
             return Ok(person);
